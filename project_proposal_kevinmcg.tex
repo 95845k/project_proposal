@@ -1,0 +1,67 @@
+\documentclass[twoside,11pt]{article}
+
+% Any additional packages needed should be included after jmlr2e.
+% Note that jmlr2e.sty includes epsfig, amssymb, natbib and graphicx,
+% and defines many common macros, such as 'proof' and 'example'.
+%
+% It also sets the bibliographystyle to plainnat; for more information on
+% natbib citation styles, see the natbib documentation, a copy of which
+% is archived at http://www.jmlr.org/format/natbib.pdf
+
+\usepackage{jmlr2e}
+%\usepackage{parskip}
+
+% Definitions of handy macros can go here
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+% Heading arguments are {volume}{year}{pages}{submitted}{published}{author-full-names}
+
+% Short headings should be running head and authors last names
+\ShortHeadings{95-845: MLHC Proposal}{Kevin McGrady}
+\firstpageno{1}
+
+\begin{document}
+
+\title{Heinz 95-845: Project Proposal}
+
+\author{\name Kevin McGrady \email kevinmcg/kevinmcg@andrew.cmu.edu \\
+       \addr Heinz College\\
+       Carnegie Mellon University\\
+       Pittsburgh, PA, United States} 
+
+\maketitle
+
+\section{Proposal Details (10 points)} \label{details}
+Please provide information for the following fields. Your proposal write-up should be less than 2 pages.
+
+\subsection{What is your proposed analysis? What are the likely outcomes?}
+For the final project in Heinz 95-845, I propose to investigate severe sepsis. This will take one of three forms: predicting the onset of severe sepsis, examining the efficacy of the treatment of severe sepsis, or predicting readmissions following severe sepsis. The determination of the exact analysis will be made following additional sepsis research, data examination, and machine learning skill development. 
+
+\subsection{Why is your proposed analysis important?}
+Severe sepsis is a leading cause of death in hospitals and is a major component of readmissions costs. 
+
+\subsection{How will your analysis contribute to existing work? Provide references.}
+This analysis was inspired by the work published by Henry, Hager, Pronovost, and Saria. Their targeted real-time early warning score (TREWScore) was intriguing. If I were to choose to study signals predicting severe sepsis, I would examine their selected features to ensure that they are in fact routinely available in electronic health records. I would also investigate other methods of survival analysis. Finally, I would explore the variation amongst the types of intensive care units. The treatment of sepsis requires further research as does the readmission prediction to understand possible analytical contribution. 
+
+\subsection{Describe the data. Please also define Y outcome(s), U treatment, V covariates, W population as applicable.}
+The data will be drawn from the MIMIC II database. The population will be those individuals admitted to intensive care units at Beth Israel Deaconess Medical Center in Boston, MA from 2001 to 2008. If the first study is chosen, the outcome would be severe sepsis; there would be no treatment; the covariates will be basic demographics and other selected features. If the second study is chosen, the outcome would be severe sepsis, the treatment would be treatment for severe sepsis; the covariates will be basic demographics and other selected features. If the third study is chosen, the outcome would be readmission; there would be no treatment; the covariates will be basic demographics and other selected features. 
+
+\subsection{What evaluation measures are appropriate for the analysis? Which measures will you use?}
+Standard machine learning metrics for classification problems will be employed including: area under the (ROC) curve, precision, and recall. 
+
+\subsection{What study design, pre-processing, and machine learning methods do you intend to use? Justify that the analysis is of appropriate size for a course project.}
+In each case, feature selection algorithms will need to be applied to the dataset. If the first study is chosen, I will be using various methods of survival analysis. If the second or third study is chosen, I will be using a variety of classification algorithms. It is unclear at this point what I can or cannot complete in an analysis on severe sepsis within the confines of this course, which is why I am leaving some options open in terms of study design. 
+
+\subsection{What are possible limitations of the study?}
+The limitations of this study, outside of timeframe (two months), current level of medical knowledge (near zero), and current level of machine learning skill (novice), is the dataset itself. The question will be how well can the results of this study be generalized given the idiosyncrasies of this medical center and the patients that it receives. 
+
+\subsection{References}
+Henry, Katharine E., et al. "A targeted real-time early warning score (TREWScore) for septic shock." Science Translational Medicine 7.299 (2015): 299ra122-299ra122.
+
+\bibliography{}
+%\appendix
+%\section*{Appendix A.}
+%Some more details about those methods, so we can actually reproduce them.
+
+
+\end{document}
